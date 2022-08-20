@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+html, body {
+  background-color: #ffffff;
+  line-height: 24px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  color: #000;
+}
+
+a {
+  transition: all 0.3s ease-in;
+  color: #000;
+  text-decoration: none;
+
+  &:hover {
+    color: #4981ff;
+  }
+}
