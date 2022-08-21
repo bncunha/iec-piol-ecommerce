@@ -4,6 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './header/components/menu/menu.component';
 import { HeaderActionButtonsComponent } from './header/components/header-action-buttons/header-action-buttons.component';
 import { RouterModule } from '@angular/router';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -11,13 +12,15 @@ import { RouterModule } from '@angular/router';
   declarations: [
     HeaderComponent,
     MenuComponent,
-    HeaderActionButtonsComponent
+    HeaderActionButtonsComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
     RouterModule
   ], exports: [
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ]
 })
 export class TemplateModule { }
