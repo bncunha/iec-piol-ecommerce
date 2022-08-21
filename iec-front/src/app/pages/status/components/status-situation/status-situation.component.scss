@@ -1,0 +1,21 @@
+.situation {
+  max-width: 500px;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  background-color: #3a9536cf;
+  color: white;
+  padding: 13px 40px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+
+  i {
+    font-size: 48px;
+  }
+
+  p {
+    margin: 0;
+    margin-top: 10px;
+  }
+}
