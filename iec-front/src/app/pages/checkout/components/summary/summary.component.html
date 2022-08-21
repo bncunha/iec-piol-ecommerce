@@ -1,0 +1,29 @@
+<div class="summary">
+  <span class="title"> Resumo do pedido </span>
+  <div class="holder">
+    <div *ngFor="let product of products" class="holder-item">
+      <span> - {{ product.name }} </span>
+      <span> {{ product.price | currency: 'BRL' }} </span>
+    </div>
+  </div>
+  <div class="holder">
+    <div class="holder-item">
+      <span> Entrega </span>
+      <span> {{ 0 | currency: 'BRL' }}</span>
+    </div>
+  </div>
+  <div class="holder">
+    <div class="holder-item">
+      <span class="total-price"> Total </span>
+      <span class="total-price"> {{ total | currency: 'BRL' }} </span>
+    </div>
+  </div>
+  <div class="buttons-holder">
+    <a routerLink="/finalizar" class="btn w-100 mt-4">
+      Concluir
+    </a>
+    <a routerLink="/" class="btn btn-secondary w-100 mt-3">
+      Continuar comprando
+    </a>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+.summary {
+  background-color: #f6f6f8;
+  padding: 15px 20px;
+  height: 100%;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.holder {
+  padding: 20px 0;
+  border-bottom: 1px solid #d3d3d3;
+
+  .holder-item {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .total-price {
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
