@@ -19,3 +19,47 @@ a {
     color: #4981ff;
   }
 }
+
+button.btn {
+  background-color: #343538;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 0;
+  padding: 15px;
+  position: relative;
+  z-index: 1;
+  border: none;
+  height: 50px;
+
+  &.btn-secondary {
+    background: none;
+    border: 1px solid #343538;
+    color: #343538;
+    &:hover{
+      background-color: transparent;
+    }
+  }
+
+  &::after {
+    content: "";
+    width: 0;
+    left: auto;
+    top: 0;
+    right: 0;
+    background: #4981ff;
+    transition: all 0.3s ease;
+    position: absolute;
+    height: 100%;
+    z-index: -1;
+  }
+
+  &:hover {
+    background-color: #343538;
+    color: #fff;
+    &::after {
+      width: 100%;
+      left: 0;
+      right: auto;
+    }
+  }
+}
