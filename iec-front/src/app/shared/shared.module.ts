@@ -4,6 +4,7 @@ import { SectionTitleComponent } from './section-title/section-title.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { RouterModule } from '@angular/router';
+import { ProductTableComponent } from './product-table/product-table.component';
 
 
 
@@ -11,7 +12,8 @@ import { RouterModule } from '@angular/router';
   declarations: [
     SectionTitleComponent,
     ProductListComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    ProductTableComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +21,8 @@ import { RouterModule } from '@angular/router';
   ],
   exports: [
     SectionTitleComponent,
-    ProductListComponent
+    ProductListComponent,
+    ProductTableComponent
   ]
 })
 export class SharedModule { }
