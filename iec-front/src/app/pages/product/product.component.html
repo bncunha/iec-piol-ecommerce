@@ -1,0 +1,30 @@
+<div class="product-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <img class="img img-fluid" src="assets/products/{{product.image}}" [alt]="product.name">
+      </div>
+      <div class="col-md-6">
+        <h1 class="product-name"> {{ product.name }} </h1>
+        <div class="prices-holder">
+          <span class="price"> {{ product.price | currency: 'BRL' }} </span>
+          <span class="discount"> {{ product.basePrice  | currency: 'BRL' }} </span>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisic elit eiusm tempor incidid ut labore et dolore magna aliqua. Ut enim ad minim venialo quis nostrud exercitation ullamco
+        </p>
+        <div class="cart-holder">
+          <div class="form-group">
+            <label for="quantidade"> Quantidade</label>
+            <select class="form-select" name="quantidade" id="quantidade">
+              <option *ngFor="let qtd of [1,2,3,4,5]" [value]="qtd"> {{ qtd }} </option>
+            </select>
+          </div>
+          <button class="btn btn-add-cart" type="button">
+            ADICIONAR AO CARRINHO
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
