@@ -10,7 +10,8 @@
     "dev:ssr": "ng run iec-front:serve-ssr",
     "serve:ssr": "node dist/iec-front/server/main.js",
     "build:ssr": "ng build && ng run iec-front:server",
-    "prerender": "ng run iec-front:prerender"
+    "prerender": "ng run iec-front:prerender",
+    "postinstall": "npm run build:ssr"
   },
   "private": true,
   "dependencies": {
