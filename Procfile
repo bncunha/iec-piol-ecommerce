@@ -1,1 +1,1 @@
-web: cd iec-front && npm run serve:ssr
+web: npm run serve:ssr
