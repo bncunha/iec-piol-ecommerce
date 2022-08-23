@@ -1,6 +1,9 @@
 <div class="product-page">
   <div class="container">
-    <div class="row">
+    <div class="not-found" *ngIf="!product && !loading">
+      Produto não encontrado
+    </div>
+    <div class="row" *ngIf="product">
       <div class="col-md-6">
         <img class="img img-fluid" src="assets/products/{{product.imagePath}}" [alt]="product.name">
       </div>
@@ -11,12 +14,12 @@
           <span class="discount"> {{ product.promotionalPrice  | currency: 'BRL' }} </span>
         </div>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisic elit eiusm tempor incidid ut labore et dolore magna aliqua. Ut enim ad minim venialo quis nostrud exercitation ullamco
+          {{ product.description }}
         </p>
         <div class="cart-holder">
           <div class="form-group">
             <label for="quantidade"> Quantidade</label>
-            <select class="form-select" name="quantidade" id="quantidade">
+            <select class="form-select" name="quantidade" id="quantidade" [(ngModel)]="quantidade">
               <option *ngFor="let qtd of [1,2,3,4,5]" [value]="qtd"> {{ qtd }} </option>
             </select>
           </div>

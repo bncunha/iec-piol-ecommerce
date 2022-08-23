@@ -1,5 +1,5 @@
 <div class="product">
-  <a routerLink="produto/{{product.name}}">
+  <a routerLink="produto/{{product.id}}">
     <span *ngIf="percentage" class="percentage"> -{{ percentage }}% </span>
     <div class="product-img">
       <img class="img img-fluid" src="assets/products/{{product.imagePath}}" [alt]="product.name">
