@@ -12,7 +12,7 @@
   <tbody *ngFor="let product of products">
     <tr>
       <td class="image-column"> 
-        <img class="img-thumbnail" src="assets/products/{{product.image}}" [alt]="product.name">
+        <img class="img-thumbnail" src="assets/products/{{product.imagePath}}" [alt]="product.name">
       </td>
       <td> {{ product.name }} </td>
       <td class="text-center"> {{ product.price | currency : 'BRL' }} </td>

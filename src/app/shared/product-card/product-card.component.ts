@@ -17,8 +17,8 @@ export class ProductCardComponent implements OnInit {
   }
 
   calculateDiscountPercentage() {
-    if (this.product.basePrice) {
-      this.percentage = 100 - (this.product.price / this.product.basePrice * 100);
+    if (this.product.promotionalPrice) {
+      this.percentage = 100 - (this.product.promotionalPrice / this.product.price * 100);
       this.percentage = Math.round(this.percentage)
     }
   }

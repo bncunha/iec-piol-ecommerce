@@ -2,13 +2,13 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <img class="img img-fluid" src="assets/products/{{product.image}}" [alt]="product.name">
+        <img class="img img-fluid" src="assets/products/{{product.imagePath}}" [alt]="product.name">
       </div>
       <div class="col-md-6">
         <h1 class="product-name"> {{ product.name }} </h1>
         <div class="prices-holder">
           <span class="price"> {{ product.price | currency: 'BRL' }} </span>
-          <span class="discount"> {{ product.basePrice  | currency: 'BRL' }} </span>
+          <span class="discount"> {{ product.promotionalPrice  | currency: 'BRL' }} </span>
         </div>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisic elit eiusm tempor incidid ut labore et dolore magna aliqua. Ut enim ad minim venialo quis nostrud exercitation ullamco

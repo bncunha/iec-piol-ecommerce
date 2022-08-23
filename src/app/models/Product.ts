@@ -1,13 +1,10 @@
 export class Product {
+  id!: string;
   name!: string;
   price!: number;
-  basePrice?: number;
-  image!: string;
-
-  constructor(name: string, price: number, basePrice: number | undefined, image: string) {
-    this.name = name;
-    this.price = price;
-    this.basePrice = basePrice;
-    this.image = image;
-  }
+  promotionalPrice!: number;
+  imagePath!: string;
+  description!: string;
+  totalValue!: number;
+  quantity!: number;
 }

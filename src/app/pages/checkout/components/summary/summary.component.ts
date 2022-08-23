@@ -13,10 +13,6 @@ export class SummaryComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.products.push(
-      new Product('Corda de pular', 16.9, 19.9, 'corda.jpg'),
-      new Product('Rolo de posicionamento para fisioterapia', 199.9, 249.9, 'rolo-fisioterapia.png'),
-    )
     this.calculateTotal();
   }
 

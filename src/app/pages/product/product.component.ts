@@ -7,7 +7,7 @@ import { Product } from 'src/app/models/Product';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
-  product = new Product('Bicicleta para spinning', 1999, 2999, 'bicicleta.jpg');
+  product = new Product();
   
   constructor() { }
 

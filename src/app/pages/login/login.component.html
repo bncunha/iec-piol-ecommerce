@@ -13,7 +13,8 @@
         <app-error-display name="password" [submitted]="f.submitted"></app-error-display>
       </div>
       <a class="signup-link" routerLink="/cadastro"> Ainda não possui conta? Cadastre-se! </a>
-      <button type="submit" class="btn w-100">
+      <button type="submit" class="btn w-100" [disabled]="loading">
+        <div class="loader" *ngIf="loading"></div>
         Entrar
       </button>
     </form>
