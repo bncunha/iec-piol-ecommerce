@@ -5,6 +5,9 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { RouterModule } from '@angular/router';
 import { ProductTableComponent } from './product-table/product-table.component';
+import { ErrorDisplayComponent } from './error-display/error-display.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -13,7 +16,8 @@ import { ProductTableComponent } from './product-table/product-table.component';
     SectionTitleComponent,
     ProductListComponent,
     ProductCardComponent,
-    ProductTableComponent
+    ProductTableComponent,
+    ErrorDisplayComponent,
   ],
   imports: [
     CommonModule,
@@ -22,7 +26,9 @@ import { ProductTableComponent } from './product-table/product-table.component';
   exports: [
     SectionTitleComponent,
     ProductListComponent,
-    ProductTableComponent
+    ProductTableComponent,
+    ErrorDisplayComponent,
+    FormsModule,
   ]
 })
 export class SharedModule { }
