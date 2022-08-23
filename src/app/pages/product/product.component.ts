@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Product } from 'src/app/models/Product';
+import { CartService } from 'src/services/cart.service';
 import { ProductService } from 'src/services/product.service';
 
 @Component({
@@ -11,11 +13,14 @@ import { ProductService } from 'src/services/product.service';
 export class ProductComponent implements OnInit {
   loading = false;
   product?: Product;
-  quantidade: number = 1
+  quantity: number = 1
   
   constructor(
     private route: ActivatedRoute,
-    private productService: ProductService
+    private router: Router,
+    private productService: ProductService,
+    private cartService: CartService,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -32,6 +37,12 @@ export class ProductComponent implements OnInit {
       this.loading = false;
       throw err;
     })
+  }
+
+  addToCart(product: Product, quantity: number) {
+    this.cartService.addItem(product, Number(quantity))
+    this.toastr.success('Item adicionado com sucesso!')
+    this.router.navigateByUrl('/carrinho')
   }
 
 }

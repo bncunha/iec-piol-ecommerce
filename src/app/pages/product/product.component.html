@@ -19,11 +19,11 @@
         <div class="cart-holder">
           <div class="form-group">
             <label for="quantidade"> Quantidade</label>
-            <select class="form-select" name="quantidade" id="quantidade" [(ngModel)]="quantidade">
+            <select class="form-select" name="quantidade" id="quantidade" [(ngModel)]="quantity">
               <option *ngFor="let qtd of [1,2,3,4,5]" [value]="qtd"> {{ qtd }} </option>
             </select>
           </div>
-          <button class="btn btn-add-cart" type="button">
+          <button class="btn btn-add-cart" type="button" (click)="addToCart(product, quantity)">
             ADICIONAR AO CARRINHO
           </button>
         </div>
