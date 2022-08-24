@@ -6,9 +6,18 @@
       </a>
     </li>
     <li>
-      <a routerLink="/login">
+      <a routerLink="/login" *ngIf="!usuario; else logado">
         <i class="fa fa-user" aria-describedby="Login"></i>
       </a>
+      <ng-template #logado>
+        <div class="usuario-logado">
+          <p> Olá, {{ usuario.name }}! </p>
+          <div (click)="logout()">
+            <small> Sair </small>
+            <i class="fa fa-arrow-right-from-bracket" aria-describedby="Sair"></i>
+          </div>
+        </div>
+      </ng-template>
     </li>
   </ul>
 </div>

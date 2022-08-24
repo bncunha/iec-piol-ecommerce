@@ -11,3 +11,16 @@
     font-size: 20px;
   }
 }
+
+.usuario-logado { 
+  font-size: 14px;
+  p {
+    margin-bottom: 3px;
+  }
+
+  div {
+    cursor: pointer;
+    display: block;
+    text-align: right;
+  }
+}

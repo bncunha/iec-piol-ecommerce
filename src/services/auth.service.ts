@@ -14,10 +14,23 @@ export class AuthService {
     private http: HttpClient,
   ) { }
 
+  getLoggedUser() {
+    const savedUser = localStorage.getItem('user');
+    return savedUser ? JSON.parse(savedUser) : null;
+  }
+
+  getToken() {
+    return this.getLoggedUser()?.token;
+  }
+
   create(login: LoginRequest) {
     return this.http.post<LoginResponse>(`${environment.apiEndpoint}/User/login`, login).pipe(
       tap(this.saveUser)
     );
+  }
+
+  logout() {
+    localStorage.removeItem("user")
   }
 
   private saveUser(login: LoginResponse) {

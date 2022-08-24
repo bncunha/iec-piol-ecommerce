@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from 'src/guards/auth.guard';
 
 const routes: Routes = [
   {path: '', loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)},
@@ -7,8 +8,8 @@ const routes: Routes = [
   {path: 'cadastro', loadChildren: () => import('./pages/signup/signup.module').then(m => m.SignupModule)},
   {path: 'produto', loadChildren: () => import('./pages/product/product.module').then(m => m.ProductModule)},
   {path: 'carrinho', loadChildren: () => import('./pages/cart/cart.module').then(m => m.CartModule)},
-  {path: 'finalizar', loadChildren: () => import('./pages/checkout/checkout.module').then(m => m.CheckoutModule)},
-  {path: 'status', loadChildren: () => import('./pages/status/status.module').then(m => m.StatusModule)},
+  {path: 'finalizar', canActivate: [AuthGuard], loadChildren: () => import('./pages/checkout/checkout.module').then(m => m.CheckoutModule)},
+  {path: 'status', canActivate: [AuthGuard], loadChildren: () => import('./pages/status/status.module').then(m => m.StatusModule)},
 ];
 
 @NgModule({
