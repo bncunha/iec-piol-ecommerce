@@ -15,7 +15,8 @@ export class CustomErrorHandler implements ErrorHandler {
   }
 
   handleError(error: any): void {
-    const message = error?.error?.notifications?.[0]?.message || 'Erro ao realizara operação!';
+    const message = error?.error?.notifications?.[0]?.message || 'Erro ao realizar a operação!';
     this.toastr.error(message, "Erro!", {onActivateTick : true});
+    console.error(error);
   }
 }

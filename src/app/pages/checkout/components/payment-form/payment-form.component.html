@@ -1,21 +1,25 @@
 <div class="payment mt-4">
   <h2> Informações de pagamento </h2>
-  <form class="row" action="">
-    <div class="mb-3 col-md-12">
+  <form [formGroup]="creditCardForm" class="row" action="">
+    <div class="mb-3 col-md-6">
       <label for="numero"> Número do cartão: </label>
-      <input id="numero" name="numero" class="form-control" type="text" maxlength="100"/>
+      <input id="numero" formControlName="number" class="form-control" type="text" maxlength="16"/>
+      <app-error-display [control]="creditCardForm.get('number')" [submitted]="submitted"></app-error-display>
     </div>
-    <div class="mb-3 col-md-12">
+    <div class="mb-3 col-md-6">
       <label for="nome"> Nome: </label>
-      <input id="nome" name="nome" class="form-control" type="text" maxlength="100"/>
+      <input id="nome" formControlName="name" class="form-control" type="text" maxlength="100"/>
+      <app-error-display [control]="creditCardForm.get('name')" [submitted]="submitted"></app-error-display>
     </div>
     <div class="mb-3 col-md-6">
       <label for="validade"> Validade: </label>
-      <input id="validade" name="validade" class="form-control" type="text" maxlength="100"/>
+      <input id="validade" formControlName="expirationDate" class="form-control" type="date"/>
+      <app-error-display [control]="creditCardForm.get('expirationDate')" [submitted]="submitted"></app-error-display>
     </div>
     <div class="mb-3 col-md-6">
       <label for="cvv"> CVV: </label>
-      <input id="cvv" name="cvv" class="form-control" type="text" maxlength="100"/>
+      <input id="cvv" formControlName="cvv" class="form-control" type="text" maxlength="3"/>
+      <app-error-display [control]="creditCardForm.get('cvv')" [submitted]="submitted"></app-error-display>
     </div>
   </form>
 </div>

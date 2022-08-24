@@ -10,10 +10,10 @@ export class CartService {
 
   addItem(product: Product, quantity: number) {
     const items = this.getItems();
-    items.push({
+    items.push(Object.assign(new Product(), {
       ...product,
       quantity
-    })
+    }))
     this.saveOnStorage(items)
   }
 
@@ -25,7 +25,7 @@ export class CartService {
 
   getItems(): Product[] {
     const savedItems = localStorage.getItem("cart");
-    return savedItems ? JSON.parse(savedItems) : [];
+    return savedItems ? JSON.parse(savedItems).map((item: any) => Object.assign(new Product(), item)) : [];
   }
 
   private saveOnStorage(product: Product[]) {

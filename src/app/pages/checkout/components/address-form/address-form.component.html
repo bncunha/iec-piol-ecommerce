@@ -1,29 +1,35 @@
 <div class="address">
   <h2> Endereço para entrega </h2>
-  <form class="row" action="">
+  <fieldset [formGroup]="addressForm" class="row" action="">
     <div class="mb-3 col-md-3">
-      <label for="cep"> CEP: </label>
-      <input id="cep" name="cep" class="form-control" type="text" maxlength="100"/>
+      <label for="cep"> CEP (apenas números): </label>
+      <input id="cep" formControlName="zipCode" class="form-control" type="text" maxlength="8"/>
+      <app-error-display [control]="addressForm.get('zipCode')" [submitted]="submitted"></app-error-display>
     </div>
     <div class="mb-3 col-md-9">
       <label for="endereco"> Endereço: </label>
-      <input id="endereco" name="endereco" class="form-control" type="text" maxlength="100"/>
+      <input id="endereco" formControlName="street" class="form-control" type="text" maxlength="100"/>
+      <app-error-display [control]="addressForm.get('street')" [submitted]="submitted"></app-error-display>
     </div>
     <div class="mb-3 col-md-3">
       <label for="numero"> Número: </label>
-      <input id="numero" name="numero" class="form-control" type="text" maxlength="100"/>
+      <input id="numero" formControlName="number" class="form-control" type="text" maxlength="3"/>
+      <app-error-display [control]="addressForm.get('number')" [submitted]="submitted"></app-error-display>
     </div>
     <div class="mb-3 col-md-9">
       <label for="bairro"> Bairro: </label>
-      <input id="bairro" name="bairro" class="form-control" type="text" maxlength="100"/>
+      <input id="bairro" formControlName="neighborhood" class="form-control" type="text" maxlength="100"/>
+      <app-error-display [control]="addressForm.get('neighborhood')" [submitted]="submitted"></app-error-display>
     </div>
     <div class="mb-3 col-md-9">
       <label for="cidade"> Cidade: </label>
-      <input id="cidade" name="cidade" class="form-control" type="text" maxlength="100"/>
+      <input id="cidade" formControlName="city" class="form-control" type="text" maxlength="100"/>
+      <app-error-display [control]="addressForm.get('city')" [submitted]="submitted"></app-error-display>
     </div>
     <div class="mb-3 col-md-3">
       <label for="estado"> UF: </label>
-      <input id="estado" name="estado" class="form-control" type="text" maxlength="2"/>
+      <input id="estado" formControlName="state" class="form-control" type="text" maxlength="2"/>
+      <app-error-display [control]="addressForm.get('state')" [submitted]="submitted"></app-error-display>
     </div>
-  </form>
+  </fieldset>
 </div>

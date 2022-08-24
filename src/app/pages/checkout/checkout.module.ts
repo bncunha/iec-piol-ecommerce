@@ -6,6 +6,8 @@ import { CheckoutComponent } from './checkout.component';
 import { AddressFormComponent } from './components/address-form/address-form.component';
 import { PaymentFormComponent } from './components/payment-form/payment-form.component';
 import { SummaryComponent } from './components/summary/summary.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { SummaryComponent } from './components/summary/summary.component';
   ],
   imports: [
     CommonModule,
-    CheckoutRoutingModule
+    CheckoutRoutingModule,
+    SharedModule,
+    ReactiveFormsModule,
   ]
 })
 export class CheckoutModule { }

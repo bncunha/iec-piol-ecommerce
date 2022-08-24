@@ -19,9 +19,10 @@
     </div>
   </div>
   <div class="buttons-holder">
-    <a routerLink="/finalizar" class="btn w-100 mt-4">
+    <button [disabled]="isLoading" type="submit" class="btn w-100 mt-4">
+      <div class="loader" *ngIf="isLoading"></div>
       Concluir
-    </a>
+    </button>
     <a routerLink="/" class="btn btn-secondary w-100 mt-3">
       Continuar comprando
     </a>

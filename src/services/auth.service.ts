@@ -23,7 +23,8 @@ export class AuthService {
   private saveUser(login: LoginResponse) {
     localStorage.setItem("user", JSON.stringify({
       token: login.token,
-      name: login.user.name
+      name: login.user.name,
+      id: login.user.id
     }))
   }
 }

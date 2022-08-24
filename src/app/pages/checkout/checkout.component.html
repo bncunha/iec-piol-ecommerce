@@ -1,14 +1,14 @@
 <div class="checkout-page">
   <div class="container">
     <h1 class="page-title"> Finalizar compra </h1>
-    <div class="row mt-5">
+    <form [formGroup]="form" class="row mt-5" (submit)="onSubmit()">
       <div class="col-md-8">
-        <app-address-form></app-address-form>
-        <app-payment-form></app-payment-form>
+        <app-address-form [addressForm]="addressForm" [submitted]="submitted"></app-address-form>
+        <app-payment-form [creditCardForm]="creditCardForm" [submitted]="submitted"></app-payment-form>
       </div>
       <div class="col-md-4">
-        <app-summary></app-summary>
+        <app-summary [isLoading]="loading"></app-summary>
       </div>
-    </div>
+    </form>
   </div>
 </div>

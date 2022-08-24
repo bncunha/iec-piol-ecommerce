@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/Product';
+import { CartService } from 'src/services/cart.service';
 
 @Component({
   selector: 'app-summary',
@@ -7,12 +8,16 @@ import { Product } from 'src/app/models/Product';
   styleUrls: ['./summary.component.scss']
 })
 export class SummaryComponent implements OnInit {
+  @Input() isLoading = false;
   products: Product[] = [];
   total: number = 0;
 
-  constructor() { }
+  constructor(
+    private cartService: CartService
+  ) { }
 
   ngOnInit(): void {
+    this.products = this.cartService.getItems();
     this.calculateTotal();
   }
 
