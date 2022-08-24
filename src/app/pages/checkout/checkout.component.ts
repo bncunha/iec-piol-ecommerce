@@ -63,7 +63,7 @@ export class CheckoutComponent implements OnInit {
       this.orderService.create(request).subscribe((response) => {
         this.loading = false;
         this.toastr.success('Pedido criado com sucesso!')
-        this.router.navigate(['/status', response.id])
+        this.router.navigate(['/status', response.data.id])
       }, (err) => {
         this.loading = false;
         throw err;

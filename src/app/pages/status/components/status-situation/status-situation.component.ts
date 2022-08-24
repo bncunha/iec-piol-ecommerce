@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-status-situation',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./status-situation.component.scss']
 })
 export class StatusSituationComponent implements OnInit {
-
+  @Input() isInvalid: boolean = false;
   constructor() { }
 
   ngOnInit(): void {

@@ -1,3 +1,5 @@
 export class CreateOrderResponse {
-  id!: string;
+  data!: {
+    id: string;
+  }
 }

@@ -1,6 +1,9 @@
-<div class="situation">
-  <i class="fa-solid fa-circle-check"></i>
-  <p>
+<div class="situation" [ngClass]="{'--invalid': isInvalid}">
+  <i *ngIf="!isInvalid" class="fa-solid fa-circle-check"></i>
+  <p *ngIf="!isInvalid; else invalid">
     Seu pedido foi realizado com sucesso!
   </p>
+  <ng-template #invalid>
+    Pedido não encontrado!
+  </ng-template>
 </div>

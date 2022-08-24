@@ -10,6 +10,10 @@
   font-weight: 700;
   line-height: 32px;
 
+  &.--invalid {
+    background-color: #953636cf;
+  }
+
   i {
     font-size: 48px;
   }

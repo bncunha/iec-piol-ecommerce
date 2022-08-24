@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { StatusComponent } from './status.component';
 
 const routes: Routes = [
-  {path: '', component: StatusComponent}
+  {path: ':id', component: StatusComponent}
 ];
 
 @NgModule({

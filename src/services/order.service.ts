@@ -15,4 +15,8 @@ export class OrderService {
   create(order: CreateOrderRequest): Observable<CreateOrderResponse> {
     return this.http.post<CreateOrderResponse>(`${environment.apiEndpoint}/Order`, order);
   }
+
+  getById(id: string): Observable<CreateOrderResponse> {
+    return this.http.get<CreateOrderResponse>(`${environment.apiEndpoint}/Order/${id}`);
+  }
 }
