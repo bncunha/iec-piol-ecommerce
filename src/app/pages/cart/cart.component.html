@@ -1,7 +1,7 @@
 <div class="cart-page">
   <div class="container">
     <h1 class="page-title"> Seu carrinho </h1>
-    <app-product-table [products]="products"></app-product-table>
+    <app-product-table [products]="products" (removeItem)="removeFromCart($event)"></app-product-table>
     <div class="buttons-holder">
       <a routerLink="/" class="btn btn-secondary">
         Continuar comprando

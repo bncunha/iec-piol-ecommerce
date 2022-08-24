@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Product } from 'src/app/models/Product';
 
 @Component({
@@ -7,7 +7,8 @@ import { Product } from 'src/app/models/Product';
   styleUrls: ['./product-table.component.scss']
 })
 export class ProductTableComponent implements OnInit {
-  @Input() products: Product[] =[]
+  @Output() removeItem = new EventEmitter();
+  @Input() products: Product[] = []
 
   constructor() { }
 

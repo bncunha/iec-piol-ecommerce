@@ -9,21 +9,20 @@
       <th class="text-center"> Ação </th>
     </tr>
   </thead>
-  <tbody *ngFor="let product of products">
-    <tr>
+  <tbody>
+    <tr *ngIf="!products?.length">
+      <td class="text-center" colspan="6"> Carinho vazio. Adicione alguns produtos! </td>
+    </tr>
+    <tr *ngFor="let product of products; let i = index">
       <td class="image-column"> 
         <img class="img-thumbnail" src="assets/products/{{product.imagePath}}" [alt]="product.name">
       </td>
       <td> {{ product.name }} </td>
-      <td class="text-center"> {{ product.price | currency : 'BRL' }} </td>
-      <td class="text-center"> 
-        <select class="form-select" name="quantidade" id="quantidade">
-          <option *ngFor="let qtd of [1,2,3,4,5]" [value]="qtd"> {{ qtd }} </option>
-        </select>
-      </td>
-      <td class="text-center"> {{ product.price * 1 | currency: 'BRL'}}</td>
+      <td class="text-center"> {{ product.promotionalPrice || product.price | currency : 'BRL' }} </td>
+      <td class="text-center"> {{ product.quantity }} </td>
+      <td class="text-center"> {{ (product.promotionalPrice || product.price) * product.quantity | currency: 'BRL'}}</td>
       <td class="text-center">
-        <button class="btn-delete" title="Excluir produto">
+        <button (click)="removeItem.emit(i)" type="button" class="btn-delete" title="Excluir produto">
           <i class="fa fa-trash"></i>
         </button>
       </td>

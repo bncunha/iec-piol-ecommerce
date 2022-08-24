@@ -10,7 +10,7 @@ import { LoginRequest } from 'src/services/requests/LoginRequest';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  loading = true;
+  loading = false;
 
   constructor(
     private authService: AuthService,
@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
   onSubmit(form: NgForm) {
     if (form.valid) {
       const request = new LoginRequest(form.value);
+      this.loading = true;
       this.authService.create(request).subscribe(() => {
         this.loading = false;
         this.router.navigateByUrl('/')
