@@ -5,7 +5,7 @@
       <p class="my-5 text-center">
         Logo você receberá um e-mail sobre a situação de entrega do pedido.
       </p>
-      <app-product-table></app-product-table>
+      <app-product-table [products]="orderItems || []" [readOnly]="true"></app-product-table>
       <a routerLink="/" class="btn btn-secondary mt-5">
         Voltar para o início
       </a>

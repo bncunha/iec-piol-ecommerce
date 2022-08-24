@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
 import { CartService } from 'src/services/cart.service';
 import { OrderService } from 'src/services/order.service';
 import { CreateOrderRequest } from 'src/services/requests/CreateOrderRequest';
@@ -19,7 +18,6 @@ export class CheckoutComponent implements OnInit {
   constructor(
     private cartService: CartService,
     private orderService: OrderService,
-    private toastr: ToastrService,
     private router: Router
   ) { }
 
@@ -62,7 +60,7 @@ export class CheckoutComponent implements OnInit {
       this.loading = true;
       this.orderService.create(request).subscribe((response) => {
         this.loading = false;
-        this.toastr.success('Pedido criado com sucesso!')
+        this.cartService.cleanCart();
         this.router.navigate(['/status', response.data.id])
       }, (err) => {
         this.loading = false;

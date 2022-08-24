@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { CreateOrderRequest } from './requests/CreateOrderRequest';
 import { CreateOrderResponse } from './responses/CreateOrderResponse';
+import { GetOrderResponse } from './responses/GetOrderResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class OrderService {
     return this.http.post<CreateOrderResponse>(`${environment.apiEndpoint}/Order`, order);
   }
 
-  getById(id: string): Observable<CreateOrderResponse> {
-    return this.http.get<CreateOrderResponse>(`${environment.apiEndpoint}/Order/${id}`);
+  getById(id: string): Observable<GetOrderResponse> {
+    return this.http.get<GetOrderResponse>(`${environment.apiEndpoint}/Order/${id}`);
   }
 }

@@ -9,6 +9,7 @@ import { Product } from 'src/app/models/Product';
 export class ProductTableComponent implements OnInit {
   @Output() removeItem = new EventEmitter();
   @Input() products: Product[] = []
+  @Input() readOnly: boolean = false;
 
   constructor() { }
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Product } from 'src/app/models/Product';
 import { OrderService } from 'src/services/order.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { OrderService } from 'src/services/order.service';
 })
 export class StatusComponent implements OnInit {
   loading: boolean = false;
-  order?: any;
+  orderItems?: Product[];
 
   constructor(
     private route: ActivatedRoute,
@@ -22,14 +23,14 @@ export class StatusComponent implements OnInit {
   }
 
   get isInvalid() {
-    return !this.loading && !this.order;
+    return !this.loading && !this.orderItems;
   }
 
   getOrderById(id: string) {
     this.loading = true;
-    this.orderService.getById(id).subscribe(order => {
+    this.orderService.getById(id).subscribe(items => {
       this.loading = false;
-      console.log(order)
+      this.orderItems = items
     }, (err) => {
       this.loading = false;
       throw err;

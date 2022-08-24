@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/services/auth.service';
+import { CartService } from 'src/services/cart.service';
 
 @Component({
   selector: 'app-header-action-buttons',
@@ -9,10 +10,15 @@ import { AuthService } from 'src/services/auth.service';
 export class HeaderActionButtonsComponent implements OnInit {
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+    private cartService: CartService
   ) { }
 
   ngOnInit(): void {
+  }
+
+  get cartItems() {
+    return this.cartService.getItems();
   }
 
   get usuario() {

@@ -6,7 +6,7 @@
       <th class="text-center"> Valor Unit. </th>
       <th class="text-center"> Quantidade </th>
       <th class="text-center"> Subtotal </th>
-      <th class="text-center"> Ação </th>
+      <th class="text-center" *ngIf="!readOnly"> Ação </th>
     </tr>
   </thead>
   <tbody>
@@ -21,7 +21,7 @@
       <td class="text-center"> {{ product.promotionalPrice || product.price | currency : 'BRL' }} </td>
       <td class="text-center"> {{ product.quantity }} </td>
       <td class="text-center"> {{ (product.promotionalPrice || product.price) * product.quantity | currency: 'BRL'}}</td>
-      <td class="text-center">
+      <td class="text-center" *ngIf="!readOnly">
         <button (click)="removeItem.emit(i)" type="button" class="btn-delete" title="Excluir produto">
           <i class="fa fa-trash"></i>
         </button>

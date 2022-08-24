@@ -24,3 +24,16 @@
     text-align: right;
   }
 }
+
+.cart-holder {
+  position: relative;
+  
+  .badge {
+    position: absolute;
+    background: #4981ff;
+    border-radius: 50%;
+    font-size: 9px;
+    top: -6px;
+    right: -7px;
+  }
+}

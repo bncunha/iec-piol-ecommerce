@@ -28,6 +28,10 @@ export class CartService {
     return savedItems ? JSON.parse(savedItems).map((item: any) => Object.assign(new Product(), item)) : [];
   }
 
+  cleanCart() {
+    localStorage.removeItem("cart")
+  }
+
   private saveOnStorage(product: Product[]) {
     localStorage.setItem("cart", JSON.stringify(product))
   }

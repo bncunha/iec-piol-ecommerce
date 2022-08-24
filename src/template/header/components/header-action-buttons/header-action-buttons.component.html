@@ -1,9 +1,12 @@
 <div>
   <ul class="buttons-list">
     <li>
-      <a routerLink="/carrinho">
-        <i class="fa fa-cart-shopping" aria-describedby="Carrinho"></i>
-      </a>
+      <div class="cart-holder">
+        <a routerLink="/carrinho">
+          <div class="badge" *ngIf="cartItems.length"> {{ cartItems.length }}</div>
+          <i class="fa fa-cart-shopping" aria-describedby="Carrinho"></i>
+        </a>
+      </div>
     </li>
     <li>
       <a routerLink="/login" *ngIf="!usuario; else logado">
