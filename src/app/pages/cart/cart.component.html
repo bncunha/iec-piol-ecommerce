@@ -6,9 +6,9 @@
       <a routerLink="/" class="btn btn-secondary">
         Continuar comprando
       </a>
-      <a routerLink="/finalizar" class="btn">
+      <button (click)="goToCheckout()" class="btn" [disabled]="!products.length">
         Finalizar compra
-      </a>
+      </button>
     </div>
   </div>
 </div>
