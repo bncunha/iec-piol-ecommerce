@@ -7,4 +7,11 @@
   justify-content: flex-end;
   gap: 30px;
   margin: 15px;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    a, button {
+      width: 100%;
+    }
+  }
 }

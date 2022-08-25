@@ -1,5 +1,9 @@
 .product-page {
   padding: 70px 0;
+
+  @media (max-width: 768px) {
+    padding: 15px 0;
+  }
 }
 
 .not-found {

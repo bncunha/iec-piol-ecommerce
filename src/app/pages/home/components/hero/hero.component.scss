@@ -11,4 +11,12 @@
   line-height: 81px;
   left: 55px;
   color: #f7f7f7;
+
+  @media(max-width: 1010px) {
+    font-size: 22px;
+    top: 10px;
+    line-height: 34px;
+    width: 90%;
+    left: 10px;
+  }
 }
