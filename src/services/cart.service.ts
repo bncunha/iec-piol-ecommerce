@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Product } from 'src/app/models/Product';
+import { PlatformService } from './platform.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
-  
-  constructor() { }
+
+  constructor(
+    private platformService: PlatformService
+  ) { }
 
   addItem(product: Product, quantity: number) {
     const items = this.getItems();
@@ -24,6 +27,7 @@ export class CartService {
   }
 
   getItems(): Product[] {
+    if (!this.platformService.isBrowser) return []
     const savedItems = localStorage.getItem("cart");
     return savedItems ? JSON.parse(savedItems).map((item: any) => Object.assign(new Product(), item)) : [];
   }

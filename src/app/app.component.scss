@@ -1,3 +1,16 @@
 main {
   min-height: 100%;
 }
+
+.http {
+  background: red;
+  color: #fff;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 800;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
