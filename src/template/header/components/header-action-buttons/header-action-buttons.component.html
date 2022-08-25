@@ -10,6 +10,7 @@
     </li>
     <li>
       <a routerLink="/login" *ngIf="!usuario; else logado">
+        <small class="d-inline-block d-md-none"> Entrar </small>
         <i class="fa fa-user" aria-describedby="Login"></i>
       </a>
       <ng-template #logado>
